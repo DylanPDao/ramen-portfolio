@@ -27,7 +27,7 @@ export default function About() {
                 I love creating elegant solutions that appear out of nowhere.
               </p>
             </ScrollAnimation>
-            <ScrollAnimation animation="ghost-slide" delay={400}>
+            <ScrollAnimation animation="ghost-slide" delay={400}> 
               <p className="text-xl leading-relaxed text-purple-200/90">
                 My journey in tech started with curiosity about how things work
                 on the web, and has evolved into a career focused on building
@@ -37,7 +37,7 @@ export default function About() {
             <ScrollAnimation animation="ghost-slide" delay={600}>
               <p className="text-xl leading-relaxed text-purple-200/90">
                 When I&apos;m not coding, you&apos;ll find me exploring new technologies,
-                contributing to open-source projects, or training ghost-type Pokémon.
+                contributing to open-source projects, or training ghost Pokémon.
               </p>
             </ScrollAnimation>
           </div>
