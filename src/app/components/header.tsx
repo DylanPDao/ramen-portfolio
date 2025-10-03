@@ -9,42 +9,31 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 20);
       
-      // Get all sections
-      const sections = ["home", "about", "projects", "contact"];
-      const scrollPosition = window.scrollY + 100; // Small offset for better detection
+      // Simple percentage-based detection
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrollPercentage = (scrollY / documentHeight) * 100;
       
-      // Check if we're at the very top
-      if (window.scrollY < 50) {
-        setActiveSection("home");
-        return;
+      // Set active section based on scroll percentage
+      let newSection = "home";
+      if (scrollPercentage < 15) {
+        newSection = "home";
+      } else if (scrollPercentage < 40) {
+        newSection = "about";
+      } else if (scrollPercentage < 70) {
+        newSection = "projects";
+      } else {
+        newSection = "contact";
       }
       
-      // Check each section
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const sectionId = sections[i];
-        
-        if (sectionId === "home") {
-          // Home is active if no other section is reached
-          setActiveSection("home");
-          return;
-        }
-        
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const offsetTop = element.offsetTop - 100; // Account for header height
-          
-          if (scrollPosition >= offsetTop) {
-            setActiveSection(sectionId);
-            return;
-          }
-        }
-      }
+      setActiveSection(newSection);
     };
     
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial position
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -95,18 +84,12 @@ export default function Header() {
                 <a
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
-                  className={`transition-all duration-300 relative group cursor-pointer hover:scale-110 transform font-medium
+                  className={`transition-all duration-300 hover:scale-110 transform inline-block
                            ${activeSection === link.section 
-                             ? "text-poison scale-110" 
+                             ? "text-poison font-bold" 
                              : "text-purple-200 hover:text-poison"}`}
                 >
                   {link.name}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-poison transition-all duration-300
-                              ${activeSection === link.section 
-                                ? "w-full" 
-                                : "w-0 group-hover:w-full"}`}
-                  />
                 </a>
               </li>
             ))}
@@ -170,9 +153,6 @@ export default function Header() {
                            : "text-purple-200 hover:text-poison"}`}
               >
                 {link.name}
-                {activeSection === link.section && (
-                  <span className="ml-2 text-xs">(current)</span>
-                )}
               </a>
             </li>
           ))}

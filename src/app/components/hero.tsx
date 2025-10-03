@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col relative px-6 overflow-hidden pt-20">
+    <section className="hero-section min-h-screen flex flex-col relative px-6 overflow-hidden pt-20">
       <div className="ghost-bg" />
       
       {/* Floating Gengar */}
