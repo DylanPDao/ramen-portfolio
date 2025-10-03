@@ -62,8 +62,8 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3 group cursor-pointer">
+      <nav className="mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <div className="flex items-center gap-2 sm:gap-3 group cursor-pointer">
           <Image
             src="/gengar.png"
             alt="Gengar Logo"
@@ -71,9 +71,10 @@ export default function Header() {
             height={40}
             className="filter drop-shadow-[0_0_10px_rgba(167,139,250,0.5)] 
                      transition-all duration-300 group-hover:scale-110 
-                     group-hover:drop-shadow-[0_0_20px_rgba(167,139,250,0.8)]"
+                     group-hover:drop-shadow-[0_0_20px_rgba(167,139,250,0.8)]
+                     w-8 h-8 sm:w-10 sm:h-10"
           />
-          <span className="text-xl font-bold text-gradient transition-all duration-300 
+          <span className="text-lg sm:text-xl font-bold text-gradient transition-all duration-300 
                          group-hover:scale-105">Dylan Dao</span>
         </div>
 

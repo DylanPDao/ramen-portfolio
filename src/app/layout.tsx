@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Dylan Dao - Full-Stack Engineer",
   description: "Portfolio of Dylan Dao - Full-Stack Engineer specializing in React, Node.js, and cloud infrastructure",
+  icons: {
+    icon: '/gengar.png',
+    shortcut: '/gengar.png',
+    apple: '/gengar.png',
+  },
 };
 
 export default function RootLayout({

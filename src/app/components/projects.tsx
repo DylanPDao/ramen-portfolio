@@ -4,32 +4,32 @@ import ScrollAnimation from "./scroll-animation";
 
 const projects = [
   {
-    title: "PokéDex Web App",
-    description: "Full-stack Pokémon database with real-time battle simulator and team builder functionality.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "PokéAPI"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "WitAI",
+    description: "An AI companion with code, converstion, image, music, and video generation capabilities.",
+    tech: ["NextJs", "ShadCN", "OpenAI API", "Rest API"],
+    github: "https://github.com/DylanPDao/WitAI",
+    live: null,
   },
   {
-    title: "Ghost-Type Management System",
-    description: "Collaborative haunting platform with real-time spooky updates and ectoplasm analytics.",
-    tech: ["React", "Express", "MongoDB", "Socket.io"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Sports Roadmap",
+    description: "Platform for displaying youth basketball game events and outcomes with real-time updates.",
+    tech: ["NextJs", "Node.js", "MongoDB", "WebSockets"],
+    github: null,
+    live: "https://sportsroadmap.com/",
   },
   {
-    title: "Shadow Realm Chat",
-    description: "AI-powered messaging platform that makes your messages disappear like a ghost.",
-    tech: ["TypeScript", "Next.js", "OpenAI", "Redis"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Pokemon TCG Search",
+    description: "A web application for searching and browsing Pokemon Trading Card Game cards with detailed information.",
+    tech: ["JavaScript", "Pokemon TCG API", "CSS"],
+    github: "https://github.com/DylanPDao/Pokemon-TCG-Search",
+    live: null,
   },
   {
-    title: "Nightmare Analytics",
-    description: "Data visualization dashboard for tracking sleep paralysis demons and dream metrics.",
-    tech: ["React", "D3.js", "Node.js", "WebSocket"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Pokemon Ecommerce",
+    description: "Full-stack e-commerce platform for Pokemon merchandise with shopping cart and payment integration.",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/DylanPDao/Pokemon-Ecommerce",
+    live: null,
   }
 ];
 
@@ -84,26 +84,30 @@ export default function Projects() {
                   </div>
                   
                   <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-purple-400 hover:text-poison 
-                               transition-all hover:scale-105 transform"
-                    >
-                      <Github size={18} />
-                      <span className="text-sm">Code</span>
-                    </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-purple-400 hover:text-poison 
-                               transition-all hover:scale-105 transform"
-                    >
-                      <ExternalLink size={18} />
-                      <span className="text-sm">Live Demo</span>
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-purple-400 hover:text-poison 
+                                 transition-all hover:scale-105 transform"
+                      >
+                        <Github size={18} />
+                        <span className="text-sm">Code</span>
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-purple-400 hover:text-poison 
+                                 transition-all hover:scale-105 transform"
+                      >
+                        <ExternalLink size={18} />
+                        <span className="text-sm">Live Demo</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
